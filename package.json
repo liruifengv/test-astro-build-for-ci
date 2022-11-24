@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "build_github_ci": "astro build  --base=/test-astro-build-for-ci",
+    "build_github_ci": "VITE_GITHUB_CI=true astro build  --base=/test-astro-build-for-ci/",
     "preview": "astro preview",
     "astro": "astro"
   },

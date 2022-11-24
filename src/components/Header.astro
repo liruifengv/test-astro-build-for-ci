@@ -1,6 +1,9 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
+
+const basename = import.meta.env.VITE_GITHUB_CI ? '/test-astro-build-for-ci' : ''
+
 ---
 
 <header>
@@ -8,9 +11,9 @@ import { SITE_TITLE } from '../config';
 		{SITE_TITLE}
 	</h2>
 	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href={`${basename}/`}>Home</HeaderLink>
+		<HeaderLink href={`${basename}/blog`}>Blog</HeaderLink>
+		<HeaderLink href={`${basename}/about`}>About</HeaderLink>
 		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
 		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
 	</nav>
